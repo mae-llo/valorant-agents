@@ -43,3 +43,8 @@ h1 {
   max-width: 100%;
   display:block;
 }
+
+.role-filters{
+  margin: 0 auto;
+  text-align: center;
+}
