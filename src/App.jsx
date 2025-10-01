@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import AgentList from "./components/AgentList";
+import './App.css'
 
 function App() {
   const [agents, setAgents] = useState([]);
@@ -9,8 +10,10 @@ function App() {
     setLoading(true);
     fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
       .then(res => res.json())
-      .then(data => {
-        setAgents(data.data);
+      .then(resData => {
+        const agentData = resData.data;
+        const alphabetizedAgents = agentData.sort((a,b) => a.displayName.localeCompare(b.displayName));
+        setAgents(alphabetizedAgents);
         setLoading(false);
       })
       .catch(err => {
@@ -22,7 +25,7 @@ function App() {
   return (
     <>
     <h1>Valorant Agent Explorer</h1>
-    {loading ? <p>Loading agents...</p> : <AgentList agents={agents} />};
+    {loading ? <p>Loading agents...</p> : <AgentList agents={agents} />}
     </>
   )
 }
