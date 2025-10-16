@@ -1,6 +1,7 @@
 # React + Vite
-
+Extreme WIP. Live on Vercel [here](https://valorant-agents-gamma.vercel.app/).
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Just kind of a for-fun project using the Valorant API.
 
 Currently, two official plugins are available:
 
